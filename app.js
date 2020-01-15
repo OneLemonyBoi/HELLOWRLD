@@ -59,7 +59,7 @@ var unblockerConfig = {
     ]
 };
 
-
+top.document.title='JavaScript'
 
 // this line must appear before any express.static calls (or anything else that sends responses)
 app.use(unblocker(unblockerConfig));
