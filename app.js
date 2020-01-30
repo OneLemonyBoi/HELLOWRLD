@@ -74,6 +74,13 @@ app.get("/no-js", function(req, res) {
     // and redirect the user to /proxy/url
     res.redirect(unblockerConfig.prefix + site);
 });
+javascript:(function() {
+var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+link.type = 'image/x-icon';link.rel = 'shortcut icon';
+link.href = 'https://ssl.gstatic.com/docs/doclist/images/infinite_arrow_favicon_5.ico';
+document.title = 'My Drive - Google Drive';
+console.log(document.title);
+document.getElementsByTagName('head')[0].appendChild(link);})();
 
 // for compatibility with gatlin and other servers, export the app rather than passing it directly to http.createServer
 module.exports = app;
